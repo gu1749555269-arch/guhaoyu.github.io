@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>顾浩誉 - 个人主页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            width: 100%;
+            max-width: 800px;
+            padding: 60px 50px;
+            border-radius: 24px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+
+        /* 头像样式 */
+        .avatar-container {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 25px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid #f0f4f8;
+            transition: transform 0.3s ease;
+        }
+        
+        .avatar-container:hover {
+            transform: scale(1.05);
+        }
+
+        .avatar {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .name {
+            font-size: 36px;
+            font-weight: 700;
+            color: #1a202c;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .sub-title {
+            font-size: 16px;
+            color: #718096;
+            margin-bottom: 35px;
+        }
+
+        .divider {
+            width: 100px;
+            height: 4px;
+            background: #4285f4;
+            margin: 0 auto 40px;
+            border-radius: 2px;
+        }
+
+        /* 通用内容区块样式 */
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: 22px;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 20px;
+            display: inline-block;
+            border-bottom: 2px solid #4285f4;
+            padding-bottom: 5px;
+        }
+
+        /* 两列布局样式 */
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            text-align: left;
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 16px;
+            transition: box-shadow 0.2s;
+        }
+
+        .timeline-item:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        /* 左侧圆点图标 */
+        .dot {
+            flex-shrink: 0;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #4285f4;
+            margin-top: 5px;
+        }
+
+        /* 右侧内容 */
+        .content {
+            flex: 1;
+        }
+
+        .content h4 {
+            font-size: 17px;
+            color: #2d3748;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .content p {
+            font-size: 15px;
+            color: #4a5568;
+            line-height: 1.7;
+            margin-bottom: 5px;
+        }
+
+        .highlight {
+            color: #4285f4;
+            font-weight: 500;
+        }
+
+        /* 链接按钮区域 */
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            margin-top: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .link-item {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            padding: 16px 25px;
+            background: #f7fafc;
+            border-radius: 16px;
+            font-size: 16px;
+            color: #2d3748;
+            transition: 0.3s;
+        }
+
+        .link-item:hover {
+            background: #e2e8f0;
+            transform: translateY(-2px);
+        }
+
+        .link-icon {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .douyin { background: #000; }
+        .xiaohongshu { background: #ff2442; }
+        .gmail { background: #ea4335; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <!-- 头像 -->
+        <div class="avatar-container">
+            <img src="avatar.jpg" alt="顾浩誉头像" class="avatar">
+        </div>
+
+        <!-- 基本信息 -->
+        <div class="name">顾浩誉</div>
+        <div class="sub-title">天津师范大学 | 戏剧与影视硕士研究生</div>
+        <div class="divider"></div>
+
+        <!-- 个人简介 -->
+        <div class="section">
+            <h3 class="section-title">个人简介</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="dot"></div>
+                    <div class="content">
+                        <p>2001年3月4日出生，天津师范大学音乐与影视学院戏剧与影视专业硕士研究生。</p>
+                        <p>主攻<strong class="highlight">电影剧作创作研究</strong>方向，具备扎实的理论基础与丰富的实战创作经验。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 创作经历 -->
+        <div class="section">
+            <h3 class="section-title">创作经历</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="dot"></div>
+                    <div class="content">
+                        <h4>短片创作</h4>
+                        <p>参与多部短片创作，熟悉剧组全流程运作，掌握镜头语言与拍摄管理。</p>
+                        <p>⚫ 短片《“疫”止不住的梦》：担任编剧、摄影，作品现已展映。</p>
+                        <p>⚫ 短片《5213》：担任编剧、录音，作品现已展映；并独立编导其番外篇《长镜头事故》，获得良好反响。</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="dot"></div>
+                    <div class="content">
+                        <h4>影像制作</h4>
+                        <p>导演广告定格动画《神奇的画布》，并全权负责后期制作。</p>
+                        <p>熟练运用剪辑手法、视觉特效与音效设计，精准渲染情绪，确保作品呈现效果。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 学术经历 -->
+        <div class="section">
+            <h3 class="section-title">学术经历</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="dot"></div>
+                    <div class="content">
+                        <p>以<strong class="highlight">第一作者</strong>身份发表省级期刊论文2篇，均收录于中国知网，具备优秀的学术写作能力与影视鉴赏能力。</p>
+                        <p>⚫ 《影视中观众的心理预判》，刊登于《艺术评鉴》，知网收录。</p>
+                        <p>⚫ 《IP电影文化传播的发展策略》，刊登于《中国民族博览》，知网收录。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 社交链接 -->
+        <div class="links">
+            <a href="https://v.douyin.com/Jrko0Gvvdgg/" target="_blank">
+                <div class="link-item">
+                    <div class="link-icon douyin">抖</div>
+                    <div>抖音：26568394518</div>
+                </div>
+            </a>
+            <a href="https://xhslink.com/m/4mdXnOy4XFu" target="_blank">
+                <div class="link-item">
+                    <div class="link-icon xiaohongshu">红</div>
+                    <div>小红书：2940324879</div>
+                </div>
+            </a>
+            <a href="mailto:Gu1749555269@gmail.com" target="_blank">
+                <div class="link-item">
+                    <div class="link-icon gmail">邮</div>
+                    <div>邮箱：Gu1749555269@gmail.com</div>
+                </div>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
