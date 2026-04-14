@@ -256,17 +256,12 @@
     <!-- ====================== -->
     <div id="video" class="page">
         <div class="section-title">影像创作</div>
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="dot"></div>
-                <div class="content">
-                    <p>参与多部短片创作，熟悉剧组全流程运作，掌握镜头语言与拍摄管理。</p>
-                    <p>⚫ 短片《“疫”止不住的梦》：编剧、摄影，已展映</p>
-                    <p>⚫ 短片《奥布林塔拉》：美术、录音</p>
-                    <p>⚫ 定格动画《神奇的画布》：导演、后期制作</p>
-                    <p>⚫ AI漫剧：分镜设计、剪辑、全流程工作流</p>
-                </div>
-            </div>
+        <div class="content">
+            <p>参与多部短片创作，熟悉剧组全流程运作，掌握镜头语言与拍摄管理。</p>
+            <p>⚫ 短片《“疫”止不住的梦》：编剧、摄影，已展映</p>
+            <p>⚫ 短片《奥布林塔拉》：美术、录音</p>
+            <p>⚫ 定格动画《神奇的画布》：导演、后期制作</p>
+            <p>⚫ AI漫剧：分镜设计、剪辑、全流程工作流</p>
         </div>
     </div>
 
@@ -275,16 +270,11 @@
     <!-- ====================== -->
     <div id="stage" class="page">
         <div class="section-title">舞台创作</div>
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="dot"></div>
-                <div class="content">
-                    <p>多年魔术表演与舞台创作经验</p>
-                    <p>⚫ 校庆演出、迎新演出等校内活动</p>
-                    <p>⚫ 大学生魔术比赛一等奖</p>
-                    <p>⚫ RH华厦魔术协会创始人、副会长</p>
-                </div>
-            </div>
+        <div class="content">
+            <p>多年魔术表演与舞台创作经验</p>
+            <p>⚫ 校庆演出、迎新演出等校内活动</p>
+            <p>⚫ 大学生魔术比赛一等奖</p>
+            <p>⚫ RH华厦魔术协会创始人、副会长</p>
         </div>
     </div>
 
@@ -293,17 +283,12 @@
     <!-- ====================== -->
     <div id="academic" class="page">
         <div class="section-title">学术成果</div>
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="dot"></div>
-                <div class="content">
-                    <p>第一作者发表多篇省级期刊，知网收录</p>
-                    <p>⚫ 《影视中观众的心理预判》｜《艺术评鉴》</p>
-                    <p>⚫ 《IP电影文化传播的发展策略》｜《中国民族博览》</p>
-                    <p>⚫ 参与编著《相声影像创作与制作论文集》</p>
-                    <p>⚫ 全国戏剧影视研讨会、世界儿童电影年会 发表论文</p>
-                </div>
-            </div>
+        <div class="content">
+            <p>第一作者发表多篇省级期刊，知网收录</p>
+            <p>⚫ 《影视中观众的心理预判》｜《艺术评鉴》</p>
+            <p>⚫ 《IP电影文化传播的发展策略》｜《中国民族博览》</p>
+            <p>⚫ 参与编著《相声影像创作与制作论文集》</p>
+            <p>⚫ 全国戏剧影视研讨会、世界儿童电影年会 发表论文</p>
         </div>
     </div>
 </div>
@@ -311,11 +296,8 @@
 <script>
 // 切换页面功能
 function showPage(pageId) {
-    // 隐藏所有页面
     document.querySelectorAll('.page').forEach(p => p.classList.remove('show'));
-    // 显示选中页面
     document.getElementById(pageId).classList.add('show');
-    // 按钮高亮
     document.querySelectorAll('button').forEach(b => b.classList.remove('active'));
     event.target.classList.add('active');
 }
