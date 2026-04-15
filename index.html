@@ -31,48 +31,20 @@
             text-align: center;
         }
 
-        /* 导航按钮 */
-        .nav {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
-        }
-
-        .nav button {
-            padding: 10px 18px;
-            border: none;
-            border-radius: 12px;
-            background: #f7fafc;
-            font-size: 15px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .nav button.active {
-            background: #4285f4;
-            color: white;
-        }
-
-        /* 页面容器 —— 同一区域切换显示 */
-        .page {
-            display: none; /* 默认全部隐藏 */
-        }
-
-        .page.show {
-            display: block; /* 只显示当前页 */
-        }
-
-        /* 头像 */
+        /* 头像样式 */
         .avatar-container {
+            position: relative;
             width: 150px;
             height: 150px;
             margin: 0 auto 25px;
             border-radius: 50%;
             overflow: hidden;
             border: 5px solid #f0f4f8;
+            transition: transform 0.3s ease;
+        }
+        
+        .avatar-container:hover {
+            transform: scale(1.05);
         }
 
         .avatar {
@@ -86,6 +58,7 @@
             font-weight: 700;
             color: #1a202c;
             margin-bottom: 10px;
+            letter-spacing: 1px;
         }
 
         .sub-title {
@@ -102,6 +75,11 @@
             border-radius: 2px;
         }
 
+        /* 通用内容区块样式 */
+        .section {
+            margin-bottom: 50px;
+        }
+
         .section-title {
             font-size: 22px;
             font-weight: 600;
@@ -112,6 +90,7 @@
             padding-bottom: 5px;
         }
 
+        /* 两列布局样式 */
         .timeline {
             display: flex;
             flex-direction: column;
@@ -126,8 +105,14 @@
             padding: 15px;
             background: #f8f9fa;
             border-radius: 16px;
+            transition: box-shadow 0.2s;
         }
 
+        .timeline-item:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        /* 左侧圆点图标 */
         .dot {
             flex-shrink: 0;
             width: 24px;
@@ -137,12 +122,14 @@
             margin-top: 5px;
         }
 
+        /* 右侧内容 */
         .content {
             flex: 1;
         }
 
         .content h4 {
             font-size: 17px;
+            color: #2d3748;
             margin-bottom: 8px;
             font-weight: 600;
         }
@@ -151,6 +138,7 @@
             font-size: 15px;
             color: #4a5568;
             line-height: 1.7;
+            margin-bottom: 5px;
         }
 
         .highlight {
@@ -158,11 +146,17 @@
             font-weight: 500;
         }
 
+        /* 链接按钮区域 */
         .links {
-            margin-top: 40px;
             display: flex;
             flex-direction: column;
             gap: 18px;
+            margin-top: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
         }
 
         .link-item {
@@ -172,6 +166,14 @@
             padding: 16px 25px;
             background: #f7fafc;
             border-radius: 16px;
+            font-size: 16px;
+            color: #2d3748;
+            transition: 0.3s;
+        }
+
+        .link-item:hover {
+            background: #e2e8f0;
+            transform: translateY(-2px);
         }
 
         .link-icon {
@@ -181,6 +183,7 @@
             align-items: center;
             justify-content: center;
             border-radius: 8px;
+            font-size: 14px;
             font-weight: bold;
             color: white;
         }
@@ -188,47 +191,75 @@
         .douyin { background: #000; }
         .xiaohongshu { background: #ff2442; }
         .gmail { background: #ea4335; }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
     </style>
 </head>
-
 <body>
-
-<div class="card">
-    <!-- 顶部切换按钮 -->
-    <div class="nav">
-        <button class="active" onclick="showPage('home')">个人简介</button>
-        <button onclick="showPage('video')">影像创作</button>
-        <button onclick="showPage('stage')">舞台创作</button>
-        <button onclick="showPage('academic')">学术成果</button>
-    </div>
-
-    <!-- ====================== -->
-    <!-- 第1页：默认显示（主页） -->
-    <!-- ====================== -->
-    <div id="home" class="page show">
+    <div class="card">
+        <!-- 头像 -->
         <div class="avatar-container">
             <img src="avatar.jpg" alt="顾浩誉头像" class="avatar">
         </div>
+
+        <!-- 基本信息 -->
         <div class="name">顾浩誉</div>
         <div class="sub-title">天津师范大学 | 戏剧与影视硕士研究生</div>
         <div class="divider"></div>
 
-        <div class="section-title">个人简介</div>
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="dot"></div>
-                <div class="content">
-                    <p>2001年3月4日出生，天津师范大学音乐与影视学院戏剧与影视专业硕士研究生。</p>
-                    <p>主攻<strong class="highlight">电影剧作创作研究</strong>方向，具备扎实的理论基础与丰富的实战创作经验。</p>
+        <!-- 个人简介 -->
+        <div class="section">
+            <h3 class="section-title">个人简介</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="dot"></div>
+                    <div class="content">
+                        <p>2001年3月4日出生，天津师范大学音乐与影视学院戏剧与影视专业硕士研究生。</p>
+                        <p>主攻<strong class="highlight">电影剧作创作研究</strong>方向，具备扎实的理论基础与丰富的实战创作经验。</p>
+                    </div>
                 </div>
             </div>
         </div>
 
+        <!-- 创作经历 -->
+        <div class="section">
+            <h3 class="section-title">创作经历</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="dot"></div>
+                    <div class="content">
+                        <h4>短片创作</h4>
+                        <p>参与多部短片创作，熟悉剧组全流程运作，掌握镜头语言与拍摄管理。</p>
+                        <p>⚫ 短片《“疫”止不住的梦》：担任编剧、摄影，作品现已展映。</p>
+                        <p>⚫ 短片《奥布林塔拉》：担任美术、录音。</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="dot"></div>
+                    <div class="content">
+                        <h4>影像制作</h4>
+                        <p>导演广告定格动画《神奇的画布》，并全权负责后期制作。</p>
+                        <p>熟练运用剪辑手法、视觉特效与音效设计，精准渲染情绪，确保作品呈现效果。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 学术经历 -->
+        <div class="section">
+            <h3 class="section-title">学术经历</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="dot"></div>
+                    <div class="content">
+                        <p>以<strong class="highlight">第一作者</strong>身份发表省级期刊论文多篇，具备优秀的学术写作能力与影视鉴赏能力。</p>
+                        <p>⚫ 《影视中观众的心理预判》，刊登于《艺术评鉴》，知网收录。</p>
+                        <p>⚫ 《IP电影文化传播的发展策略》，刊登于《中国民族博览》，知网收录。</p>
+                        <p>⚫ 参与编著《相声影像创作与制作论文集》，并发表《四十年春晚相声的历史变迁与美学探析》一文。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 社交链接 -->
         <div class="links">
             <a href="https://v.douyin.com/Jrko0Gvvdgg/" target="_blank">
                 <div class="link-item">
@@ -242,7 +273,7 @@
                     <div>小红书：2940324879</div>
                 </div>
             </a>
-            <a href="mailto:Gu1749555269@gmail.com">
+            <a href="mailto:Gu1749555269@gmail.com" target="_blank">
                 <div class="link-item">
                     <div class="link-icon gmail">邮</div>
                     <div>邮箱：Gu1749555269@gmail.com</div>
@@ -250,58 +281,8 @@
             </a>
         </div>
     </div>
-
-    <!-- ====================== -->
-    <!-- 第2页：影像创作 -->
-    <!-- ====================== -->
-    <div id="video" class="page">
-        <div class="section-title">影像创作</div>
-        <div class="content">
-            <p>参与多部短片创作，熟悉剧组全流程运作，掌握镜头语言与拍摄管理。</p>
-            <p>⚫ 短片《“疫”止不住的梦》：编剧、摄影，已展映</p>
-            <p>⚫ 短片《奥布林塔拉》：美术、录音</p>
-            <p>⚫ 定格动画《神奇的画布》：导演、后期制作</p>
-            <p>⚫ AI漫剧：分镜设计、剪辑、全流程工作流</p>
-        </div>
-    </div>
-
-    <!-- ====================== -->
-    <!-- 第3页：舞台创作 -->
-    <!-- ====================== -->
-    <div id="stage" class="page">
-        <div class="section-title">舞台创作</div>
-        <div class="content">
-            <p>多年魔术表演与舞台创作经验</p>
-            <p>⚫ 校庆演出、迎新演出等校内活动</p>
-            <p>⚫ 大学生魔术比赛一等奖</p>
-            <p>⚫ RH华厦魔术协会创始人、副会长</p>
-        </div>
-    </div>
-
-    <!-- ====================== -->
-    <!-- 第4页：学术成果 -->
-    <!-- ====================== -->
-    <div id="academic" class="page">
-        <div class="section-title">学术成果</div>
-        <div class="content">
-            <p>第一作者发表多篇省级期刊，知网收录</p>
-            <p>⚫ 《影视中观众的心理预判》｜《艺术评鉴》</p>
-            <p>⚫ 《IP电影文化传播的发展策略》｜《中国民族博览》</p>
-            <p>⚫ 参与编著《相声影像创作与制作论文集》</p>
-            <p>⚫ 全国戏剧影视研讨会、世界儿童电影年会 发表论文</p>
-        </div>
-    </div>
-</div>
-
-<script>
-// 切换页面功能
-function showPage(pageId) {
-    document.querySelectorAll('.page').forEach(p => p.classList.remove('show'));
-    document.getElementById(pageId).classList.add('show');
-    document.querySelectorAll('button').forEach(b => b.classList.remove('active'));
-    event.target.classList.add('active');
-}
-</script>
+</body>
+</html>
 
 </body>
 </html>
